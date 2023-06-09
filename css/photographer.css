@@ -1,10 +1,16 @@
 #contact_modal {
     display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
 }
 
 .photograph-header {
     background-color: #FAFAFA;
-    height: 300px;
+    height: 250px;
     margin: 0 100px;
 }
 
@@ -73,4 +79,157 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+    font-size: 20pt;
+}
+
+form textarea{
+    width: inherit;
+    height: 50mm;
+    font-size: 20pt;
+}
+
+.photograph_section  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding:0 10mm;
+    height:250px;
+}
+
+.photograph_section h2 {
+    color: #D3573C;
+    font-size: 36pt;
+    margin: 5px 0;
+}
+
+.photograph_section img {
+    height: 200px;
+    width: 200px;
+    border-radius:50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.photograph_section p{
+    display: flex;
+    flex-direction: column;
+    font-size:10pt;
+}
+.photograph_section p strong{
+    color:#901c1c;
+    font-size:14pt;
+}
+
+.media_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin: 100px 0;
+}
+
+.media_section article {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.media_section article div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+    margin-top: 5px;
+}
+.media_section article h2{
+    color: #901C1C;
+    font-size: 12pt;
+    vertical-align: middle;
+    margin: 4px 0;
+    font-weight: 500;
+}
+
+.media_section article p{
+    display:block;
+    color: #901C1C;
+    font-size: 12pt;
+    margin: 4px 0;
+}
+
+.media_section article img, video {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+#tri {
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    margin-top: 5px
+}
+
+#tri select{
+    background-color: #901C1C;
+    color: white;
+    padding: 0 20px 0 10px;
+}
+
+#likeAndPrice{
+    display:block;
+    position: fixed;
+    bottom: 0;
+    right: 10mm;
+    background-color: #DB8876;
+    padding: 3mm 0;
+}
+
+#likeAndPrice span{
+    padding:0 3mm;
+}
+
+#likeAndPrice #likeTotal{
+    padding: 0;
+}
+.imageCloseUp{
+    display:none;
+}
+
+.lightbox{
+    position:fixed;
+    width:70%;
+    height:80%;
+    top:10%;
+    left: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.lightbox .close{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.lightbox div{
+    height: 100%;
+}
+.lightbox img,.lightbox video {
+    height:90%;
+    width:auto;
+} 
+.lightbox p{
+    color: #901c1c;
+    font-size: 15pt;
+    margin-top: 5px;
+}
+.lightbox span{
+    color:#901C1C;
+    vertical-align: middle;
+    font-size: 48pt;
 }
