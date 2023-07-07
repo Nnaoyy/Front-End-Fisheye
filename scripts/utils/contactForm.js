@@ -1,18 +1,18 @@
-function displayModal() {
+const displayModal = () => {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "block";
     const html = document.querySelector("html");
     html.style.overflowY = "hidden";
 }
 
-function closeModal() {
+const closeModal = () => {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
     const html = document.querySelector("html");
     html.style.overflowY = "visible";
 }
 
-function envoi(){
+const envoi = () => {
     closeModal();
     console.log(contact);
     document.form.reset();
@@ -49,6 +49,7 @@ const contact={
     const modal = document.getElementById("contact_modal");
 	  if(modal.style.display == "block"){
         if (event.key == "Escape"){
+          console.log(contact);
           closeModal();
         }  
       }
