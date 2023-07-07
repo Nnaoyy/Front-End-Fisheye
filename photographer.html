@@ -29,7 +29,7 @@
         </header>
 				<form name="form">
 					<div>
-						<label>Prénom</label>
+						<label for="firstname">Prénom</label>
 						<input
             type="text"
             id="firstname"
@@ -40,7 +40,7 @@
             required>
 					</div>
           <div>
-						<label>Nom</label>
+						<label for="lastname">Nom</label>
 						<input 
             type="text"
             id="lastname"
@@ -51,7 +51,7 @@
             required>
 					</div>
           <div>
-						<label>Email</label>
+						<label for="email">Email</label>
 						<input 
             type="email"
             id="email"
@@ -62,7 +62,7 @@
             required>
 					</div>
           <div>
-						<label>Votre message</label>
+						<label for="message">Votre message</label>
 						<textarea
             rows = "4"
             id="message"
@@ -77,9 +77,9 @@
 			</div>
 		</div>
     <div id="tri">
-      <p>Trier par</p>
+      <label for="photo-select">Trier par</label>
       <select name="photo" id="photo-select">
-        <option value="Popularité">Popularité</option>
+        <option value="Popularité" title="Popularité">Popularité</option>
         <option value="Date">Date</option>
         <option value="Titre">Titre</option>
       </select>

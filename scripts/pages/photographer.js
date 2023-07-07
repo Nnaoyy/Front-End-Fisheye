@@ -3,17 +3,19 @@ let url = new URL(window.location.href);
 let id = url.searchParams.get("id");
 
 //méthode qui récupère les data du json, les photographe et les photo(media)
-async function getMedia() {  
-    let medias= [];
-    await fetch("../data/photographers.json")
-        .then((res)=> res.json())
-        .then((data) => (medias = data))
-        .catch(err => console.log("oh no", err));
+const getMedia = async() => {  
+    let response = await fetch("../data/photographers.json");
+    let medias = await response.json();
+    // let medias= [];
+    // await fetch("../data/photographers.json")
+    //     .then((res)=> res.json())
+    //     .then((data) => (medias = data))
+    //     .catch(err => console.log("oh no", err));
     return medias;
 }
 
 const table=[];
-async function setMedia(medias, photographers) {
+const setMedia= async(medias, photographers) =>{
 //récupère les donnés du photographe grace a son id    
     const PhotographersData = photographers;
     const photographSection = document.querySelector(".photograph_section");    
@@ -64,10 +66,9 @@ async function setMedia(medias, photographers) {
 
 }
 // modification du tri des images par date/titre/popularité
-const sort = document.getElementById("photo-select");
-sort.addEventListener("change", modifySort);
 
-function modifySort(){
+
+const modifySort = () => {
     const mediaSection = document.querySelector(".media_section");
     mediaSection.innerHTML="";
     let e=0;
@@ -97,10 +98,12 @@ function modifySort(){
     }
     
 }
+const sort = document.getElementById("photo-select");
+sort.addEventListener("change", modifySort);
 
 //lightbox
 let index=0;
-function lightboxOn(e){
+const lightboxOn = (e) => {
     index=e;
     const lightbox = document.getElementById("imageCloseUp");
 	lightbox.style.display = "block";
@@ -148,7 +151,7 @@ function lightboxOn(e){
         }
 }
 
-function lightboxOff(){
+const lightboxOff = () => {
     const lightbox = document.getElementById("imageCloseUp");
 	lightbox.style.display = "none";
     const html = document.querySelector("html");
@@ -177,7 +180,7 @@ window.addEventListener("keydown", function (event) {
 
 //like et dislike
 
-function like(e){
+const like = (e) => {
     const like = document.getElementsByClassName(`like-${e}`);
     const nbrLike = document.getElementsByClassName(`nbrLike-${e}`);
     let a= Number(nbrLike[0].outerText) + 1;
@@ -187,7 +190,7 @@ function like(e){
     likeTotal.innerText = b;
 }
 
-function dislike(e){
+const dislike = (e) => {
     const like = document.getElementsByClassName(`like-${e}`);
     const nbrLike = document.getElementsByClassName(`nbrLike-${e}`);
     let a= Number(nbrLike[0].outerText) - 1;
@@ -197,7 +200,7 @@ function dislike(e){
     likeTotal.innerText = b;
 }
 
-async function initMedia() {
+const initMedia = async() => {
     // Récupère les datas des photographes
     const  mediaUser  = await getMedia();
     const { media } = mediaUser;
